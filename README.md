@@ -1,1 +1,1 @@
-this is both premetric and postmetric students can apply schlorships and can view,update their detailes
+This is Both Premetric and Postmetric Students can Apply Scholarships and can View,Update their Detailes
