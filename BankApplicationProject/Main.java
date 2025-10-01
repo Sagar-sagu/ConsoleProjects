@@ -8,10 +8,6 @@ public class Main
 
 		System.out.println("WELCOME TO BANK APPLICATION");
 		System.out.println("");
-		System.out.println(" I Hope Your Phone Number Linked To Your Current BankAccount");
-		System.out.println("Get started");
-
-		
-
+		System.out.println("Get started......");
 	}
 }
