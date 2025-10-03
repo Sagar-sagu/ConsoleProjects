@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import code.LogInFile;
 
 public class Main
 {
@@ -9,5 +10,8 @@ public class Main
 		System.out.println("WELCOME TO BANK APPLICATION");
 		System.out.println("");
 		System.out.println("Get started......");
+
+		//LogInFunctionCalling
+		LogInFile.LogInFunction();
 	}
 }

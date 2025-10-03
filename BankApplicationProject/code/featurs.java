@@ -34,6 +34,7 @@ public class featurs
 
 	public static void TransactionHistroy
 	{
-
+		System.out.println("");
+		System.out.println("Here you can See Last Transaction only");
 	}
 }
