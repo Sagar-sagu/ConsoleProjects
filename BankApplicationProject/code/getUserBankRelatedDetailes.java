@@ -9,6 +9,7 @@ public class getUserBankRelatedDetailes
 	static String phoneNum;
 	static String usrName;
 	static String usrFatherName;
+	static String usrDateOfBirth;
 	static String usrAge;
 	static String usrGender;
 	static String usrAddress;
@@ -25,6 +26,13 @@ public class getUserBankRelatedDetailes
 		System.out.println("");
 		System.out.println("Enter your Father Name");
 		usrName = scan.nextLine();
+	}
+
+	public static void getUserDateOfBirth
+	{
+		System.out.println("");
+		System.out.println("Enter your Date Of Birth");
+		usrDateOfBirth = scan.nextLine();
 	}
 
 	public static void getPhoneNumber
@@ -98,11 +106,13 @@ public class getUserBankRelatedDetailes
 	{
 		getUserName();
 		getUserFatherName();
+		getUserDateOfBirth();
 		getPhoneNumber();
 		getUserAge();
 		getGender();
 		getAddress();
 
-		//System.out.println("Your are Succesfully Create An Account");
+		System.out.println("Your are Succesfully Create An Account");
+		System.out.println("");
 	}
 }
