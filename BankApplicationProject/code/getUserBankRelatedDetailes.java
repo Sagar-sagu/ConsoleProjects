@@ -1,6 +1,8 @@
 package code;
 
 import java.util.Scanner;
+import java.io.IOException;
+
 
 public class getUserBankRelatedDetailes
 {
@@ -14,28 +16,28 @@ public class getUserBankRelatedDetailes
 	static String usrGender;
 	static String usrAddress;
 
-	public static void getUserName
+	public static void getUserName throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Full Name");
 		usrName = scan.nextLine();
 	}
 
-	public static void getUserFatherName
+	public static void getUserFatherName throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Father Name");
 		usrName = scan.nextLine();
 	}
 
-	public static void getUserDateOfBirth
+	public static void getUserDateOfBirth throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Date Of Birth");
 		usrDateOfBirth = scan.nextLine();
 	}
 
-	public static void getPhoneNumber
+	public static void getPhoneNumber throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -55,7 +57,7 @@ public class getUserBankRelatedDetailes
 		}
 	}
 
-	public static void getUserAge
+	public static void getUserAge throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -66,15 +68,15 @@ public class getUserBankRelatedDetailes
 			{
 				System.out.println("");
 				break;
-			} 
+			}
 			else
 			{
 				System.out.println("Age greater than Zero");
 			}
 		}
-	}	
+	}
 
-	public static void getGender
+	public static void getGender throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -95,14 +97,14 @@ public class getUserBankRelatedDetailes
 		}
 	}
 
-	public static void getAddress
+	public static void getAddress throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Address");
 		usrAddress = scan.nextLine();
 	}
 
-	public static void openBankAccount
+	public static void openBankAccount throws IOException
 	{
 		getUserName();
 		getUserFatherName();
@@ -111,6 +113,14 @@ public class getUserBankRelatedDetailes
 		getUserAge();
 		getGender();
 		getAddress();
+		try {
+					 ProvideBankAccount.ProvideAccountNumber();
+					 ProvideBankAccount.ProvideIFSCcode();
+					 ProvideBankAccount.ProvideCustomerID();
+					 ProvideBankAccount.ProvideUPIid();
+			 } catch (Exception e) {
+					 System.out.println("");
+			 }
 
 		System.out.println("Your are Succesfully Create An Account");
 		System.out.println("");

@@ -3,6 +3,7 @@ package code;
 //import dependencies packages
 import java.util.Scanner;
 import java.util.Random;
+import java.io.IOException;
 
 public class ProvideBankAccount
 {
@@ -13,7 +14,7 @@ public class ProvideBankAccount
 	static String generatedUPIid;
 	static String UserBalance;
 
-	public static void ProvideAccountNumber
+	public static void ProvideAccountNumber throws IOException
 	{
         int length = 13;
         String characters = "0123456789";
@@ -28,7 +29,7 @@ public class ProvideBankAccount
         System.out.println("");
 	}
 
-	public static void ProvideIFSCcode
+	public static void ProvideIFSCcode throws IOException
 	{
 				int length = 4;
         String characters = "0123456789";
@@ -43,7 +44,7 @@ public class ProvideBankAccount
         System.out.println("");
 	}
 
-	public static void ProvideCustomerID
+	public static void ProvideCustomerID throws IOException
 	{
 				int length = 8;
         String characters = "0123456789";
@@ -58,7 +59,7 @@ public class ProvideBankAccount
         System.out.println("");
 	}
 
-	public static void ProvideUPIid
+	public static void ProvideUPIid throws IOException
 	{
 		int length = 3;
 		String characters = "abcdefghijklmnopqrstuvwxyz";
@@ -73,7 +74,7 @@ public class ProvideBankAccount
 		System.out.println("");
 	}
 
-	public static void ProvideSavingAccount
+	public static void ProvideSavingAccount throws IOException
 	{
 		UserBalance="1000";
 	}

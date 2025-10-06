@@ -10,19 +10,22 @@ public class ProfileFile
 	//global level variabl
 	static Scanner scan =  new Scanner(System.in);
 
-	public static void ProfileFunction
+	public static void ProfileFunction throws IOException
 	{
 			System.out.println("");
 			System.out.println("Welcome to your profile");
 			System.out.println("Here you can view and update your details.");
+			System.out.println("Except UPI Id");
 			System.out.println("");
 			//call read Methodes
 			ReadUserDetailsFromDatabase.readLoginUserName();
 			ReadUserDetailsFromDatabase.readUserId();
 			ReadUserDetailsFromDatabase.readUserSecurityPIN();
+			ReadUserDetailsFromDatabase.readUserUPIid();
 			System.out.println("Name :- " + ReadUserDetailsFromDatabase.LoginUserName);
 			System.out.println("UserID :- " + ReadUserDetailsFromDatabase.UserID);
 			System.out.println("SecurityPIN :- " + ReadUserDetailsFromDatabase.securityPIN);
+			System.out.println("UPI Id :- " + ReadUserDetailsFromDatabase.UserUPIid);
 			System.out.println("");
 			System.out.println("you can Edit your profile details ");
 			while (true)

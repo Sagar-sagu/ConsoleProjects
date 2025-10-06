@@ -1,8 +1,10 @@
 package code;
 
+import java.io.IOException;
+
 public class HomeFile
 {
-	public static void HomeFunction
+	public static void HomeFunction throws IOException
 	{
 		System.out.println("");
 		System.out.println("Select Option What You Want ");

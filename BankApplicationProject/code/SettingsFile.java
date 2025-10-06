@@ -1,6 +1,7 @@
 package code;
 
 import java.util.Scanner;
+import java.io.IOException;
 import java.time.LocalTime;
 import java.time.LocalDate;
 
@@ -9,7 +10,7 @@ public class SettingsFile
 	static String usrMPINpin;
 	static Scanner scan=new Scanner(System.in);
 
-	public static void settings
+	public static void settings throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -29,12 +30,12 @@ public class SettingsFile
 		}
 	}
 
-    public static void getCurrentDate
+    public static void getCurrentDate throws IOException
 		{
         static LocalDate date = LocalDate.now();
     }
 
-    public static void getCurrentTime
+    public static void getCurrentTime throws IOException
 		 {
         static LocalTime time = LocalTime.now();
     }

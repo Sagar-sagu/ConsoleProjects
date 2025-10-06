@@ -114,6 +114,13 @@ public class WriteUserDetailsToDatabase
 				WriteDetailes.close();
 		}
 
+		public static void writeUserUPIid() throws IOException
+		{
+				FileWriter WriteDetailes = new FileWriter("database/DatabaseFolders/ProvideBankAccountDetailes/UserUPIid.txt");
+				WriteDetailes.write(ProvideBankAccount.generatedUPIid);
+				WriteDetailes.close();
+		}
+
 		//BankFeatures Methodes
 		public static void writeUserSetMPINpin() throws IOException
 		{
@@ -132,14 +139,28 @@ public class WriteUserDetailsToDatabase
 		public static void writeUserSendPhoneNumber() throws IOException
 		{
 			FileWriter WriteDetailes = new FileWriter("database/DatabaseFolders/BankFeaturesDetailes/UserSendPhoneNumber.txt");
-			WriteDetailes.write(features.sendPhoneNum);
+			WriteDetailes.write(CheckingDetails.sendPhoneNum);
 			WriteDetailes.close();
 		}
 
 		public static void writeUserSendMoney() throws IOException
 		{
 			FileWriter WriteDetailes = new FileWriter("database/DatabaseFolders/BankFeaturesDetailes/UserSendMoney.txt");
-			WriteDetailes.write(features.sendMoney);
+			WriteDetailes.write(CheckingDetails.sendMoney);
+			WriteDetailes.close();
+		}
+
+		public static void writeUserSendAccountNumber() throws IOException
+		{
+			FileWriter WriteDetailes = new FileWriter("database/DatabaseFolders/BankFeaturesDetailes/UserSendAccountNumber.txt");
+			WriteDetailes.write(CheckingDetails.sendAccNum);
+			WriteDetailes.close();
+		}
+
+		public static void writeUserSendIFSCcode() throws IOException
+		{
+			FileWriter WriteDetailes = new FileWriter("database/DatabaseFolders/BankFeaturesDetailes/UserSendIFSCcode.txt");
+			WriteDetailes.write(CheckingDetails.sendIfscCode);
 			WriteDetailes.close();
 		}
 

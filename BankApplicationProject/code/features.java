@@ -2,26 +2,32 @@ package code;
 
 //imported dependencies packages
 import java.util.Scanner;
+import java.io.IOException;
 import database.code.ReadUserDetailsFromDatabase;
 
 public class features
 {
-	public static void 	SendMoneyTruoghPhoneNumber
+	static Scanner scan = new Scanner(System.in);
+
+
+	public static void 	SendMoneyTruoghPhoneNumber throws IOException
 	{
-		
+		CheckingDetails.CheckPhoneNumber();
+		CheckingDetails.CheckSendMoney();
+		CheckingDetails.CheckMPINpin();
 	}
 
-	public static void SendMoneyTruoghAccountNumber
+	public static void SendMoneyTruoghAccountNumber throws IOException
 	{
-
+		CheckingDetails.CheckAccountNumber();
+		CheckingDetails.CheckIFSCcode();
+		CheckingDetails.SendingAccountNumber();
+		CheckingDetails.SendingIFSCcode();
+		CheckingDetails.CheckSendMoney();
+		CheckingDetails.CheckMPINpin();
 	}
 
-	public static void SendMoneyTruoghUPIid
-	{
-
-	}
-
-	public static void CheckBalance
+	public static void CheckBalance throws IOException
 	{
 		System.out.println("");
 		while (true)

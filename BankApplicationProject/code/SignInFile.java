@@ -23,20 +23,20 @@ public class SignInFile
 		System.out.println("");
 		while (true)
 		{
-	        System.out.println("Note: UserID must be 8 Characters and" );
-	        System.out.println(" Include atleast one or more UpperCase,LowerCase,Numbers,SpecialCharacters");
-			System.out.println("Create User ID");
-			userID = scan.nextLine();
-			if (userID.length()!=8 )
-	        {
-	        	System.out.println("Created UserID SuccesFully");
-	        	break;
-	        }
-	        else
-	        {
-	            System.out.println("UserID must be 8 characters. Please try again.");
-	        }
-	    }  
+        System.out.println("Note: UserID must be 8 Characters and" );
+        System.out.println(" Include atleast one or more UpperCase,LowerCase,Numbers,SpecialCharacters");
+				System.out.println("Create User ID");
+				userID = scan.nextLine();
+				if (userID.length()!=8 )
+        {
+        	System.out.println("Created UserID SuccesFully");
+        	break;
+        }
+        else
+        {
+            System.out.println("UserID must be 8 characters. Please try again.");
+        }
+    }
 	}
 
 	 public static void getSecurityPIN() throws IOException
@@ -44,22 +44,22 @@ public class SignInFile
         System.out.println("");
         while (true)
         {
-	        System.out.println("Note: you Create 4 Security PIN ");
-	        System.out.println("Create Security PIN");
-	        securityPIN = input.nextLine();
-	        if (password.length() != 4 )
-	        {
-	        	System.out.println("Created security pin SuccesFully");
-	        }
-	        else
-	        {
-	            System.out.println("Security PIN must 4 Digits. Please try again.");
-	        }
-	    }
-        
+		        System.out.println("Note: you Create 4 Security PIN ");
+		        System.out.println("Create Security PIN");
+		        securityPIN = input.nextLine();
+		        if (password.length() != 4 )
+		        {
+		        	System.out.println("Created security pin SuccesFully");
+		        }
+		        else
+		        {
+		            System.out.println("Security PIN must 4 Digits. Please try again.");
+	        	}
+	    	}
+
     }
 
-    public static void SigInFunction
+    public static void SigInFunction throws IOException
     {
     	getUserName();
     	getUserID();

@@ -1,6 +1,7 @@
 package code;
 
 import java.util.Scanner;
+import java.io.IOException;
 import database.code.ReadUserDetailsFromDatabase;
 
 
@@ -9,9 +10,11 @@ public class CheckingDetails
   // global level variables
   static String sendMoney;
   static String sendPhoneNum;
+  static String sendAccNum;
+  static String sendIfscCode;
   static Scanner scan = new Scanner(System.in);
 
-  public static void CheckPhoneNumber
+  public static void CheckPhoneNumber throws IOException
   {
   		System.out.println("");
   		while (true)
@@ -30,22 +33,59 @@ public class CheckingDetails
   		}
   }
 
-  public static void CheckAccountNumber
+  public static void CheckAccountNumber throws IOException
   {
-
+    System.out.println("");
+    while (true)
+    {
+        System.out.println("Enter your AccountNumber");
+        int usrAccNum = scan.nextInt();
+        if (usrAccNum==ReadUserDetailesFromDatabase.UserAccountNumber)
+        {
+          System.out.println("Your Ready For enter IFSC code");
+          break;
+        }
+        else
+        {
+          System.out.println("Enter valid AccountNumber");
+        }
+    }
   }
 
-  public static void CheckIFSCcode
+  public static void SendingAccountNumber throws IOException
   {
-
+    System.out.println("");
+    System.out.println("Enter Sending AccountNumber");
+    sendAccNum = scan.nextLine();
   }
 
-  public static void CheckUPIid
+  public static void SendingIFSCcode throws IOException
   {
-
+    System.out.println("");
+    System.out.println("Enter Sending IFSC code");
+    sendIfscCode = scan.nextLine();
   }
 
-  public static void CheckSendMoney
+  public static void CheckIFSCcode throws IOException
+  {
+    System.out.println("");
+    while (true)
+    {
+        System.out.println("Enter your IFSC code");
+        int usrIfscCode = scan.nextInt();
+        if (usrIfscCode==ReadUserDetailesFromDatabase.UserIFSCcode)
+        {
+          System.out.println("");
+          break;
+        }
+        else
+        {
+          System.out.println("Enter valid IFSC code");
+        }
+    }
+  }
+
+  public static void CheckSendMoney throws IOException
   {
     System.out.println("");
 		while (true)
@@ -64,7 +104,7 @@ public class CheckingDetails
 		}
   }
 
-  public static void CheckMPINpin
+  public static void CheckMPINpin throws IOException
   {
     System.out.println("");
     while (true)
@@ -74,7 +114,7 @@ public class CheckingDetails
         if (usrMpinPin==ReadUserDetailesFromDatabase.usrMPINpin)
         {
           System.out.println("Succesfully Transfered");
-          viewUsrBankReletedDetailes.viewLastTransactionInPassbook
+          viewUsrBankReletedDetailes.viewLastTransactionInPassbook();
           SettingsFile.getCurrentDate();
           SettingsFile.getCurrentTime();
           break;

@@ -23,12 +23,15 @@ public class ReadUserDetailsFromDatabase
 	public static String UserAccountNumber;
 	public static String UserCustomerID;
 	public static String UserIFSCcode;
+	public static String UserUPIid;
 	public static String UserBalance;
 	//BankFeatures Variables
 	public static String UserSetMPINpin;
 	public static String UserTransactionHistory;
 	public static String UserSendPhoneNumber;
 	public static String UserSendMoney;
+	public static String UserSendAccountNumber;
+	public static String UserSendIFSCcode;
 	public static String UserTransactionDate;
 	public static String UserTransactionTime;
 
@@ -139,6 +142,14 @@ public class ReadUserDetailsFromDatabase
 	 		 bufferedReader.close();
 		 }
 
+		 public static void readUserUPIid() throws IOException
+		{
+			 FileReader reader = new FileReader("database/databaseFolders/ProvideBankAccountDetailes/UserUPIid.txt");
+	 		 BufferedReader bufferedReader = new BufferedReader(reader);
+	 		 UserUPIid = bufferedReader.readLine();
+	 		 bufferedReader.close();
+		 }
+
 		 public static void readUserBalance() throws IOException
 		{
 				FileReader reader = new FileReader("database/databaseFolders/ProvideBankAccountDetailes/UserBalance.txt");
@@ -177,6 +188,22 @@ public class ReadUserDetailsFromDatabase
 		FileReader reader = new FileReader("database/databaseFolders/BankFeaturesDetailes/UserSendMoney.txt");
 		 BufferedReader bufferedReader = new BufferedReader(reader);
 		 UserSendMoney = bufferedReader.readLine();
+		 bufferedReader.close();
+	 }
+
+		 public static void readUserSendAccountNumber() throws IOException
+		{
+		 FileReader reader = new FileReader("database/databaseFolders/BankFeaturesDetailes/UserSendAccountNumber.txt");
+			BufferedReader bufferedReader = new BufferedReader(reader);
+			UserSendAccountNumber = bufferedReader.readLine();
+			bufferedReader.close();
+		}
+
+		public static void readUserSendIFSCcode() throws IOException
+	 {
+		FileReader reader = new FileReader("database/databaseFolders/BankFeaturesDetailes/UserSendIFSCcode.txt");
+		 BufferedReader bufferedReader = new BufferedReader(reader);
+		 UserSendIFSCcode = bufferedReader.readLine();
 		 bufferedReader.close();
 	 }
 
