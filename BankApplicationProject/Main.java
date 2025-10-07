@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import code.LogInFile;
 import code.SignInFile;
-import java.io.IOException
+import java.io.IOException;
 
 public class Main
 {

@@ -7,9 +7,9 @@ import database.code.ReadUserDetailsFromDatabase;
 
 public class ProfileFile
 {
-	public static void ProfileFunction throws IOException
+	public static void ProfileFunction() throws IOException
 	{
-		Scanner scan = nnew Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 
 			System.out.println("");
 			System.out.println("Welcome to your profile");

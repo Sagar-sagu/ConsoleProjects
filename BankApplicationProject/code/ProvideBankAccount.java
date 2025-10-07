@@ -15,7 +15,7 @@ public class ProvideBankAccount
 	static String generatedUPIid;
 	static String UserBalance;
 
-	public static void ProvideAccountNumber throws IOException
+	public static void ProvideAccountNumber() throws IOException
 	{
         int length = 13;
         String characters = "0123456789";
@@ -30,7 +30,7 @@ public class ProvideBankAccount
 				WriteUserDetailsToDatabase.writeUserAccountNumber();
 	}
 
-	public static void ProvideIFSCcode throws IOException
+	public static void ProvideIFSCcode() throws IOException
 	{
 				int length = 4;
         String characters = "0123456789";
@@ -45,7 +45,7 @@ public class ProvideBankAccount
 				WriteUserDetailsToDatabase.writeUserIFSCcode();
 	}
 
-	public static void ProvideCustomerID throws IOException
+	public static void ProvideCustomerID() throws IOException
 	{
 				int length = 8;
         String characters = "0123456789";
@@ -60,7 +60,7 @@ public class ProvideBankAccount
 				WriteUserDetailsToDatabase.writeUserCustomerID();
 	}
 
-	public static void ProvideUPIid throws IOException
+	public static void ProvideUPIid() throws IOException
 	{
 			int length = 3;
 			String characters = "abcdefghijklmnopqrstuvwxyz";
@@ -75,7 +75,7 @@ public class ProvideBankAccount
 			WriteUserDetailsToDatabase.writeUserUPIid();
 	}
 
-	public static void ProvideSavingAccount throws IOException
+	public static void ProvideSavingAccount() throws IOException
 	{
 		UserBalance="1000";
 		WriteUserDetailsToDatabase.writeUserBalance();

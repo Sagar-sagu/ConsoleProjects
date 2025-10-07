@@ -14,7 +14,7 @@ public class CheckingDetails
   static String sendIfscCode;
   static Scanner scan = new Scanner(System.in);
 
-  public static void CheckSendPhoneNumber throws IOException
+  public static void CheckSendPhoneNumber() throws IOException
   {
   		System.out.println("");
   		while (true)
@@ -34,7 +34,7 @@ public class CheckingDetails
   		}
   }
 
-  public static void CheckAccountNumber throws IOException
+  public static void CheckAccountNumber() throws IOException
   {
     System.out.println("");
     while (true)
@@ -53,7 +53,7 @@ public class CheckingDetails
     }
   }
 
-  public static void SendingAccountNumber throws IOException
+  public static void SendingAccountNumber() throws IOException
   {
     System.out.println("");
     System.out.println("Enter Sending AccountNumber");
@@ -61,7 +61,7 @@ public class CheckingDetails
     WriteUserDetailsToDatabase.writeUserSendAccountNumber();
   }
 
-  public static void SendingIFSCcode throws IOException
+  public static void SendingIFSCcode() throws IOException
   {
     System.out.println("");
     System.out.println("Enter Sending IFSC code");
@@ -69,7 +69,7 @@ public class CheckingDetails
     WriteUserDetailsToDatabase.writeUserSendIFSCcode();
   }
 
-  public static void CheckIFSCcode throws IOException
+  public static void CheckIFSCcode() throws IOException
   {
     System.out.println("");
     while (true)
@@ -88,12 +88,12 @@ public class CheckingDetails
     }
   }
 
-  public static String CheckSendMoney throws IOException
+  public static String CheckSendMoney() throws IOException
   {
     System.out.println("");
 		while (true)
 		{
-			System.out.println("Enter Money to Send")
+			System.out.println("Enter Money to Send");
 			sendMoney = scan.nextFloat();
 			if ((sendMoney<=ReadUserDetailesFromDatabase.UserBalance) && (sendMoney>=0))
 			{
@@ -109,7 +109,7 @@ public class CheckingDetails
 		}
   }
 
-  public static void CheckMPINpin throws IOException
+  public static void CheckMPINpin() throws IOException
   {
     System.out.println("");
     while (true)

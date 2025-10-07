@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.io.IOException;
 import database.code.WriteUserDetailsToDatabase;
 
-
 public class SignInFile
 {
 	static Scanner scan=new Scanner(System.in);
@@ -12,7 +11,7 @@ public class SignInFile
 	static String userID;
 	static String securityPIN;
 
-	public static void getUserName throws IOException
+	public static void getUserName() throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Name");
@@ -20,7 +19,7 @@ public class SignInFile
 		WriteUserDetailsToDatabase.writeLoginUserName();
 	}
 
-	public static void getUserID throws IOException
+	public static void getUserID() throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -63,7 +62,7 @@ public class SignInFile
 
     }
 
-    public static void SigInFunction throws IOException
+    public static void SigInFunction() throws IOException
     {
     	getUserName();
     	getUserID();

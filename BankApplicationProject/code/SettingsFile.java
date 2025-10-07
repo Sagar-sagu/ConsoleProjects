@@ -11,7 +11,7 @@ public class SettingsFile
 	static String usrMPINpin;
 	static Scanner scan=new Scanner(System.in);
 
-	public static void settings throws IOException
+	public static void settings() throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -32,12 +32,12 @@ public class SettingsFile
 		}
 	}
 
-    public static void getCurrentDate throws IOException
+    public static void getCurrentDate() throws IOException
 		{
         static LocalDate date = LocalDate.now();
     }
 
-    public static void getCurrentTime throws IOException
+    public static void getCurrentTime() throws IOException
 		 {
         static LocalTime time = LocalTime.now();
     }

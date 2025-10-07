@@ -5,7 +5,7 @@ import database.code.ReadUserDetailsFromDatabase;
 
 public class viewUsrBankReletedDetailes
 {
-	public static void viewPassBookInterFace throws IOException
+	public static void viewPassBookInterFace() throws IOException
 	{
 		System.out.println("");
 		System.out.println("Name :- " + ReadUserDetailsFromDatabase.UserName);
@@ -18,7 +18,7 @@ public class viewUsrBankReletedDetailes
 		System.out.println("Address :- " + ReadUserDetailsFromDatabase.UserAddress);
 	}
 
-	public static void viewLastTransactionInPassbook throws IOException
+	public static void viewLastTransactionInPassbook() throws IOException
 	{
 		  System.out.println("");
 		//	System.out.println("Here you can See Last Transaction only");

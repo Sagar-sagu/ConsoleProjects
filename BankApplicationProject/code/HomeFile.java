@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HomeFile
 {
-	public static void HomeFunction throws IOException
+	public static void HomeFunction() throws IOException
 	{
 		Scanner input = new Scanner(System.in);
 		running:

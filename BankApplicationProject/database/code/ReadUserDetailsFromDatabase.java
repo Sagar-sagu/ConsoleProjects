@@ -15,7 +15,7 @@ public class ReadUserDetailsFromDatabase
 	public static String UserName;
 	public static String UserFatherName;
 	public static String UserAge;
-	public static String UserDateOfBirth
+	public static String UserDateOfBirth;
   public static String UserGender;
 	public static String UserAddress;
 	public static String UserPhoneNumber;

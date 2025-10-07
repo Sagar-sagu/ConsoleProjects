@@ -17,7 +17,7 @@ public class getUserBankRelatedDetailes
 	static String usrGender;
 	static String usrAddress;
 
-	public static void getUserName throws IOException
+	public static void getUserName() throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Full Name");
@@ -25,7 +25,7 @@ public class getUserBankRelatedDetailes
 		WriteUserDetailsToDatabase.writeUserName();
 	}
 
-	public static void getUserFatherName throws IOException
+	public static void getUserFatherName() throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Father Name");
@@ -33,7 +33,7 @@ public class getUserBankRelatedDetailes
 		WriteUserDetailsToDatabase.writeUserId();
 	}
 
-	public static void getUserDateOfBirth throws IOException
+	public static void getUserDateOfBirth() throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Date Of Birth");
@@ -41,12 +41,12 @@ public class getUserBankRelatedDetailes
 		WriteUserDetailsToDatabase.writeUserDateOfBirth();
 	}
 
-	public static void getPhoneNumber throws IOException
+	public static void getPhoneNumber() throws IOException
 	{
 		System.out.println("");
 		while (true)
 		{
-			System.out.println("This PhoneNumber Linked to Your Bank Account")
+			System.out.println("This PhoneNumber Linked to Your Bank Account");
 			System.out.println("Enter your PhoneNumber");
 			phoneNum = scan.nextLine();
 			if (phoneNum.length()==10)
@@ -62,7 +62,7 @@ public class getUserBankRelatedDetailes
 		}
 	}
 
-	public static void getUserAge throws IOException
+	public static void getUserAge() throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -82,16 +82,16 @@ public class getUserBankRelatedDetailes
 		}
 	}
 
-	public static void getGender throws IOException
+	public static void getGender() throws IOException
 	{
 		System.out.println("");
 		while (true)
 		{
 			System.out.println("Enter your Gender");
-			System.out.println("1.Male")
-			System.out.println("2.FeMale")
+			System.out.println("1.Male");
+			System.out.println("2.FeMale");
 			usrGender = scan.nextLine();
-			if (usrGender.equalsIgnoreCase("Male") || (usrGender.equalsIgnoreCase("FeMale"))
+			if (usrGender.equalsIgnoreCase("Male") || usrGender.equalsIgnoreCase("FeMale"))
 			{
 				System.out.println("");
 				WriteUserDetailsToDatabase.writeUserGender();
@@ -104,7 +104,7 @@ public class getUserBankRelatedDetailes
 		}
 	}
 
-	public static void getAddress throws IOException
+	public static void getAddress() throws IOException
 	{
 		System.out.println("");
 		System.out.println("Enter your Address");
@@ -112,7 +112,7 @@ public class getUserBankRelatedDetailes
 		WriteUserDetailsToDatabase.writeUserAddress();
 	}
 
-	public static void openBankAccount throws IOException
+	public static void openBankAccount() throws IOException
 	{
 		getUserName();
 		getUserFatherName();

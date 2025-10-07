@@ -8,7 +8,7 @@ public class LogInFile
 {
 	static Scanner scan=new Scanner(System.in);
 
-	public static void checkUserName throws IOException
+	public static void checkUserName() throws IOException
 	{
 		System.out.println("");
 		ReadUserDetailsFromDatabase.readLoginUserName();
@@ -28,7 +28,7 @@ public class LogInFile
 		}
 	}
 
-	public static void checkUserID throws IOException
+	public static void checkUserID() throws IOException
 	{
 		System.out.println("");
 		while (true)
@@ -47,7 +47,7 @@ public class LogInFile
 	 }
 	}
 
-	public static void checkSecurityPIN throws IOException
+	public static void checkSecurityPIN() throws IOException
 	{
 		System.out.println("");
 		while(true)
@@ -113,7 +113,7 @@ public class LogInFile
             }
     }
 
-	public static void LogInFunction throws IOException
+	public static void LogInFunction() throws IOException
 	{
 			ReadUserDetailsFromDatabase.readLoginUserName();
 			ReadUserDetailsFromDatabase.readUserId();
