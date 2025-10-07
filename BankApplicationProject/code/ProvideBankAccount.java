@@ -4,6 +4,7 @@ package code;
 import java.util.Scanner;
 import java.util.Random;
 import java.io.IOException;
+import database.code.WriteUserDetailsToDatabase;
 
 public class ProvideBankAccount
 {
@@ -26,7 +27,7 @@ public class ProvideBankAccount
             usrAccountNum.append(characters.charAt(index));
         }
         generatedAccontNum = usrAccountNum.toString();
-        System.out.println("");
+				WriteUserDetailsToDatabase.writeUserAccountNumber();
 	}
 
 	public static void ProvideIFSCcode throws IOException
@@ -41,7 +42,7 @@ public class ProvideBankAccount
             usrIFSCcode.append(characters.charAt(index));
         }
         generatedIFSCcode = usrIFSCcode.toString();
-        System.out.println("");
+				WriteUserDetailsToDatabase.writeUserIFSCcode();
 	}
 
 	public static void ProvideCustomerID throws IOException
@@ -56,26 +57,27 @@ public class ProvideBankAccount
             usrCustomerID.append(characters.charAt(index));
         }
         generatedCustomerID = usrCustomerID.toString();
-        System.out.println("");
+				WriteUserDetailsToDatabase.writeUserCustomerID();
 	}
 
 	public static void ProvideUPIid throws IOException
 	{
-		int length = 3;
-		String characters = "abcdefghijklmnopqrstuvwxyz";
-		Random random = new Random();
-		StringBuilder usrUPIid = new StringBuilder();
-		for (int i = 0; i < length; i++)
-		{
-				int index = random.nextInt(characters.length());
-				usrUPIid.append(characters.charAt(index));
-		}
-		generatedUPIid = usrUPIid.toString();
-		System.out.println("");
+			int length = 3;
+			String characters = "abcdefghijklmnopqrstuvwxyz";
+			Random random = new Random();
+			StringBuilder usrUPIid = new StringBuilder();
+			for (int i = 0; i < length; i++)
+			{
+					int index = random.nextInt(characters.length());
+					usrUPIid.append(characters.charAt(index));
+			}
+			generatedUPIid = usrUPIid.toString();
+			WriteUserDetailsToDatabase.writeUserUPIid();
 	}
 
 	public static void ProvideSavingAccount throws IOException
 	{
 		UserBalance="1000";
+		WriteUserDetailsToDatabase.writeUserBalance();
 	}
 }

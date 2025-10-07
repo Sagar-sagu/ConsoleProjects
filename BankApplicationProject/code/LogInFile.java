@@ -11,11 +11,12 @@ public class LogInFile
 	public static void checkUserName throws IOException
 	{
 		System.out.println("");
+		ReadUserDetailsFromDatabase.readLoginUserName();
 		while (true)
 		{
 			System.out.println("Enter Your Name As Given IN Account Created Time");
 			String userName = scan.nextLine();
-			if (userName.equalse(ReadUserDetailsFromDatabase.UserName))
+			if (userName.equalse(ReadUserDetailsFromDatabase.LoginUserName))
 			{
 				System.out.println("");
 				break;
@@ -92,7 +93,7 @@ public class LogInFile
                 System.out.println("2.SecurityPIN");
                 System.out.println("3.Both");
                 System.out.println("Choose (1/2/3)");
-                int choose=input.nextInt();
+                int choose = scan.nextInt();
 
                 switch(choose)
                 {
@@ -114,13 +115,35 @@ public class LogInFile
 
 	public static void LogInFunction throws IOException
 	{
-		checkUserID();
-		checkPassword();
-		System.out.println("Login Succesfully");
-		System.out.println("You Must Create An Bank Account");
-		System.out.println("So, You are give your Bank Related Detailes");
+			ReadUserDetailsFromDatabase.readLoginUserName();
+			ReadUserDetailsFromDatabase.readUserId();
+      ReadUserDetailsFromDatabase.readUserSecurityPIN();
+      System.out.println("Note: If in Case Forget Your UserId and SecurityPIN You can Retrive it.....");
+      System.out.println("");
 
-		getUserBankRelatedDetailes.openBankAccount();
-
+      while (true)
+      {
+          System.out.println("Enter R for Retrive detailes OR else, Enter C for continue If you Remember all detailes");
+          String choice = scan.nextLine();
+          if (choice.equalsIgnoreCase("R"))
+          {
+						 checkUserName();
+             RetriveDetailes();
+          }
+          else if (choice.equalsIgnoreCase("C"))
+          {
+              checkUserID();
+              checkSecurityPIN();
+							System.out.println("Login Succesfully");
+							System.out.println("You Must Create An Bank Account");
+							System.out.println("So, You are give your Bank Related Detailes");
+							getUserBankRelatedDetailes.openBankAccount();
+              break;
+          }
+          else
+          {
+              System.out.println("Invalid choice, Enter valid choice");
+          }
+      }
 	}
 }

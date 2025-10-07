@@ -11,7 +11,7 @@ public class Main
 		//global variabl
 		Scanner scan=new Scanner(System.in);
 
-		//Entry point of This Project 
+		//Entry point of This Project
 		System.out.println("WELCOME TO BANK APPLICATION");
 		System.out.println("");
 		System.out.println("Get started......");
@@ -31,7 +31,7 @@ public class Main
 									break;
 					case 2:SignInFile.SigInFunction();
 									break;
-					case 3:System.out.println("Exiting the portel...");
+					case 3:System.out.println("Exiting the Application...");
 									System.exit(0);
 					default:System.out.println("Invalid choice, please try again.");
 									break;

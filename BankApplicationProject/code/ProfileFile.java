@@ -7,11 +7,10 @@ import database.code.ReadUserDetailsFromDatabase;
 
 public class ProfileFile
 {
-	//global level variabl
-	static Scanner scan =  new Scanner(System.in);
-
 	public static void ProfileFunction throws IOException
 	{
+		Scanner scan = nnew Scanner(System.in);
+
 			System.out.println("");
 			System.out.println("Welcome to your profile");
 			System.out.println("Here you can view and update your details.");
@@ -78,5 +77,6 @@ public class ProfileFile
 							System.out.println("Enter valid choice....");
 					}
 			}
+			scan.close();
 	}
 }

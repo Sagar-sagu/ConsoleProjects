@@ -2,7 +2,7 @@ package code;
 
 import java.util.Scanner;
 import java.io.IOException;
-import database.code.ReadUserDetailsFromDatabase;
+import database.code.*;
 
 
 public class CheckingDetails
@@ -14,7 +14,7 @@ public class CheckingDetails
   static String sendIfscCode;
   static Scanner scan = new Scanner(System.in);
 
-  public static void CheckPhoneNumber throws IOException
+  public static void CheckSendPhoneNumber throws IOException
   {
   		System.out.println("");
   		while (true)
@@ -24,6 +24,7 @@ public class CheckingDetails
   			if (sendPhoneNum.length()==10)
   			{
   					System.out.println("");
+            WriteUserDetailsToDatabase.writeUserSendPhoneNumber();
   					break;
   			}
   			else
@@ -57,6 +58,7 @@ public class CheckingDetails
     System.out.println("");
     System.out.println("Enter Sending AccountNumber");
     sendAccNum = scan.nextLine();
+    WriteUserDetailsToDatabase.writeUserSendAccountNumber();
   }
 
   public static void SendingIFSCcode throws IOException
@@ -64,6 +66,7 @@ public class CheckingDetails
     System.out.println("");
     System.out.println("Enter Sending IFSC code");
     sendIfscCode = scan.nextLine();
+    WriteUserDetailsToDatabase.writeUserSendIFSCcode();
   }
 
   public static void CheckIFSCcode throws IOException
@@ -85,16 +88,18 @@ public class CheckingDetails
     }
   }
 
-  public static void CheckSendMoney throws IOException
+  public static String CheckSendMoney throws IOException
   {
     System.out.println("");
 		while (true)
 		{
 			System.out.println("Enter Money to Send")
 			sendMoney = scan.nextFloat();
-			if ((SendMoney<=ReadUserDetailesFromDatabase.UserBalance) && (SendMoney>=0))
+			if ((sendMoney<=ReadUserDetailesFromDatabase.UserBalance) && (sendMoney>=0))
 			{
 				System.out.println("");
+        WriteUserDetailsToDatabase.writeUserSendMoney();
+        return sendMoney;
 				break;
 			}
 			else
@@ -117,6 +122,8 @@ public class CheckingDetails
           viewUsrBankReletedDetailes.viewLastTransactionInPassbook();
           SettingsFile.getCurrentDate();
           SettingsFile.getCurrentTime();
+          WriteUserDetailsToDatabase.writeUserTransactionDate();
+          WriteUserDetailsToDatabase.writeUserTransactionTime();
           break;
         }
         else

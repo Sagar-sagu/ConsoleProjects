@@ -2,6 +2,7 @@ package code;
 
 import java.util.Scanner;
 import java.io.IOException;
+import database.code.WriteUserDetailsToDatabase;
 
 
 public class SignInFile
@@ -16,6 +17,7 @@ public class SignInFile
 		System.out.println("");
 		System.out.println("Enter your Name");
 		usrName = scan.nextLine();
+		WriteUserDetailsToDatabase.writeLoginUserName();
 	}
 
 	public static void getUserID throws IOException
@@ -30,6 +32,7 @@ public class SignInFile
 				if (userID.length()!=8 )
         {
         	System.out.println("Created UserID SuccesFully");
+					WriteUserDetailsToDatabase.writeUserId();
         	break;
         }
         else
@@ -50,6 +53,7 @@ public class SignInFile
 		        if (password.length() != 4 )
 		        {
 		        	System.out.println("Created security pin SuccesFully");
+							WriteUserDetailsToDatabase.writeUserSecurityPIN();
 		        }
 		        else
 		        {

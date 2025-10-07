@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.time.LocalDate;
+import database.code.WriteUserDetailsToDatabase;
 
 public class SettingsFile
 {
@@ -21,6 +22,7 @@ public class SettingsFile
 			if (usrMPINpin.length()==6)
 			{
 				System.out.println("Created MPIN pin Succesfully");
+				WriteUserDetailsToDatabase.writeUserSetMPINpin();
 				break;
 			}
 			else

@@ -12,7 +12,7 @@ public class features
 
 	public static void 	SendMoneyTruoghPhoneNumber throws IOException
 	{
-		CheckingDetails.CheckPhoneNumber();
+		CheckingDetails.CheckSendPhoneNumber();
 		CheckingDetails.CheckSendMoney();
 		CheckingDetails.CheckMPINpin();
 	}
@@ -45,5 +45,44 @@ public class features
 					System.out.println("Invalid MPIN PIN");
 				}
 		}
+	}
+
+	public static void WaysToSendMoney
+	{
+        System.out.println("");
+        System.out.println("Please select the type of Ways you want to Send for:");
+        System.out.println("");
+
+        running:
+        while (true)
+        {
+            System.out.println("1.SendMoneyTruoghPhoneNumber");
+            System.out.println("2.SendMoneyTruoghAccountNumber");
+            System.out.println("3.Back");
+            System.out.println("");
+            System.out.println("Enter your choice (1,2,3) ");
+            scanChoice = input.nextLine();
+            if ((scanChoice.equals("1")) || (scanChoice.equals("2")))
+            {
+            WriteStudentDetailesToDatabase.writeChoice();
+            }
+
+            switch (scanChoice)
+            {
+
+                case "1":SendMoneyTruoghPhoneNumber();
+													ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
+                        break;
+                case "2":SendMoneyTruoghAccountNumber();
+													ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
+                        break;
+                case "3":System.out.println("you are going back.......");
+                        System.out.println("");
+                        break running;
+                default:System.out.println("Invalid choice, please try again.");
+                        break;
+
+            }
+        }
 	}
 }

@@ -2,6 +2,7 @@ package code;
 
 import java.util.Scanner;
 import java.io.IOException;
+import database.code.WriteUserDetailsToDatabase;
 
 
 public class getUserBankRelatedDetailes
@@ -21,6 +22,7 @@ public class getUserBankRelatedDetailes
 		System.out.println("");
 		System.out.println("Enter your Full Name");
 		usrName = scan.nextLine();
+		WriteUserDetailsToDatabase.writeUserName();
 	}
 
 	public static void getUserFatherName throws IOException
@@ -28,6 +30,7 @@ public class getUserBankRelatedDetailes
 		System.out.println("");
 		System.out.println("Enter your Father Name");
 		usrName = scan.nextLine();
+		WriteUserDetailsToDatabase.writeUserId();
 	}
 
 	public static void getUserDateOfBirth throws IOException
@@ -35,6 +38,7 @@ public class getUserBankRelatedDetailes
 		System.out.println("");
 		System.out.println("Enter your Date Of Birth");
 		usrDateOfBirth = scan.nextLine();
+		WriteUserDetailsToDatabase.writeUserDateOfBirth();
 	}
 
 	public static void getPhoneNumber throws IOException
@@ -48,6 +52,7 @@ public class getUserBankRelatedDetailes
 			if (phoneNum.length()==10)
 			{
 				System.out.println("");
+				WriteUserDetailsToDatabase.writeUserPhoneNumber();
 				break;
 			}
 			else
@@ -67,6 +72,7 @@ public class getUserBankRelatedDetailes
 			if (usrAge>=0)
 			{
 				System.out.println("");
+				WriteUserDetailsToDatabase.writeUserAge();
 				break;
 			}
 			else
@@ -88,6 +94,7 @@ public class getUserBankRelatedDetailes
 			if (usrGender.equalsIgnoreCase("Male") || (usrGender.equalsIgnoreCase("FeMale"))
 			{
 				System.out.println("");
+				WriteUserDetailsToDatabase.writeUserGender();
 				break;
 			}
 			else
@@ -102,6 +109,7 @@ public class getUserBankRelatedDetailes
 		System.out.println("");
 		System.out.println("Enter your Address");
 		usrAddress = scan.nextLine();
+		WriteUserDetailsToDatabase.writeUserAddress();
 	}
 
 	public static void openBankAccount throws IOException
@@ -122,7 +130,11 @@ public class getUserBankRelatedDetailes
 					 System.out.println("");
 			 }
 
-		System.out.println("Your are Succesfully Create An Account");
-		System.out.println("");
+			 System.out.println("");
+			 System.out.println("Your are Succesfully Create An Account");
+			 System.out.println("So, You can Select Option ViewPassBook for ");
+			 System.out.println("See Account Related Details");
+			 HomeFile.HomeFunction();
+
 	}
 }
