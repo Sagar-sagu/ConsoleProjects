@@ -71,10 +71,10 @@ public class features
             {
 
                 case "1":SendMoneyTruoghPhoneNumber();
-													ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
+						ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
                         break;
                 case "2":SendMoneyTruoghAccountNumber();
-													ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
+						ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
                         break;
                 case "3":System.out.println("you are going back.......");
                         System.out.println("");
