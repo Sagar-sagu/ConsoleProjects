@@ -1,5 +1,6 @@
 package code;
 
+//imported dependencies packages
 import java.util.Scanner;
 import java.io.IOException;
 import java.time.LocalTime;
@@ -8,7 +9,9 @@ import database.code.WriteUserDetailsToDatabase;
 
 public class SettingsFile
 {
-	static String usrMPINpin;
+	public static String date;
+	public static String time;
+	public static String usrMPINpin;
 	static Scanner scan=new Scanner(System.in);
 
 	public static void settings() throws IOException
@@ -34,11 +37,13 @@ public class SettingsFile
 
     public static void getCurrentDate() throws IOException
 		{
-        static LocalDate date = LocalDate.now();
+         LocalDate Date = LocalDate.now();
+				 date = Date + "";
     }
 
     public static void getCurrentTime() throws IOException
 		 {
-        static LocalTime time = LocalTime.now();
+         LocalTime Time = LocalTime.now();
+				 time = Time + "";
     }
 }

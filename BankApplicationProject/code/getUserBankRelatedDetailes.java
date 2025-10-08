@@ -9,13 +9,13 @@ public class getUserBankRelatedDetailes
 {
 	//globle level varaibles
 	static Scanner scan = new Scanner(System.in);
-	static String phoneNum;
-	static String usrName;
-	static String usrFatherName;
-	static String usrDateOfBirth;
-	static String usrAge;
-	static String usrGender;
-	static String usrAddress;
+	public static String phoneNum;
+	public static String usrName;
+	public static String usrFatherName;
+	public static String usrDateOfBirth;
+	public static String usrAge;
+	public static String usrGender;
+	public static String usrAddress;
 
 	public static void getUserName() throws IOException
 	{
@@ -69,7 +69,8 @@ public class getUserBankRelatedDetailes
 		{
 			System.out.println("Enter your Age");
 			usrAge = scan.nextLine();
-			if (usrAge>=0)
+			int TypeCastusrAge = Integer.parseInt(usrAge);
+			if (TypeCastusrAge>=0)
 			{
 				System.out.println("");
 				WriteUserDetailsToDatabase.writeUserAge();

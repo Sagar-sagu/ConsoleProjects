@@ -15,8 +15,9 @@ public class LogInFile
 		while (true)
 		{
 			System.out.println("Enter Your Name As Given IN Account Created Time");
+			System.out.println("For Security Purpose");
 			String userName = scan.nextLine();
-			if (userName.equalse(ReadUserDetailsFromDatabase.LoginUserName))
+			if (userName.equals(ReadUserDetailsFromDatabase.LoginUserName))
 			{
 				System.out.println("");
 				break;
@@ -35,7 +36,7 @@ public class LogInFile
 		{
 			System.out.println("Enter your UserID");
 			String userID = scan.nextLine();
-			if (userID.equalse(ReadUserDetailesFromDatabase.UserID))
+			if (userID.equals(ReadUserDetailsFromDatabase.UserID))
 			{
 				System.out.println("");
 				break;
@@ -54,7 +55,7 @@ public class LogInFile
 		{
 			System.out.println("Enter SecurityPIN");
 			String userID = scan.nextLine();
-			if (userID.equalse(ReadUserDetailesFromDatabase.securityPIN))
+			if (userID.equals(ReadUserDetailsFromDatabase.securityPIN))
 			{
 				System.out.println("");
 				break;
@@ -69,7 +70,7 @@ public class LogInFile
 	public static String ForgetUserID() throws IOException
 	 {
 			 String forgetUserID = ReadUserDetailsFromDatabase.UserID;
-			 return forgetUs;
+			 return forgetUserID;
 	 }
 
 	 public static String ForgetSecurityPIN() throws IOException

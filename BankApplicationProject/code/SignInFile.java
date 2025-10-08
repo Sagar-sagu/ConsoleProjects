@@ -7,9 +7,9 @@ import database.code.WriteUserDetailsToDatabase;
 public class SignInFile
 {
 	static Scanner scan=new Scanner(System.in);
-	static String usrName;
-	static String userID;
-	static String securityPIN;
+	public static String usrName;
+	public static String userID;
+	public static String securityPIN;
 
 	public static void getUserName() throws IOException
 	{
@@ -28,7 +28,7 @@ public class SignInFile
         System.out.println(" Include atleast one or more UpperCase,LowerCase,Numbers,SpecialCharacters");
 				System.out.println("Create User ID");
 				userID = scan.nextLine();
-				if (userID.length()!=8 )
+				if (userID.length() == 8)
         {
         	System.out.println("Created UserID SuccesFully");
 					WriteUserDetailsToDatabase.writeUserId();
@@ -48,11 +48,12 @@ public class SignInFile
         {
 		        System.out.println("Note: you Create 4 Security PIN ");
 		        System.out.println("Create Security PIN");
-		        securityPIN = input.nextLine();
-		        if (password.length() != 4 )
+		        securityPIN = scan.nextLine();
+		        if (securityPIN.length() == 4)
 		        {
 		        	System.out.println("Created security pin SuccesFully");
 							WriteUserDetailsToDatabase.writeUserSecurityPIN();
+							break;
 		        }
 		        else
 		        {

@@ -9,11 +9,11 @@ import database.code.WriteUserDetailsToDatabase;
 public class ProvideBankAccount
 {
 	//global variables
-	static String generatedAccontNum;
-	static String generatedIFSCcode;
-	static String generatedCustomerID;
-	static String generatedUPIid;
-	static String UserBalance;
+	public static String generatedAccontNum;
+	public static String generatedIFSCcode;
+	public static String generatedCustomerID;
+	public static String generatedUPIid;
+	public static String UserBalance;
 
 	public static void ProvideAccountNumber() throws IOException
 	{

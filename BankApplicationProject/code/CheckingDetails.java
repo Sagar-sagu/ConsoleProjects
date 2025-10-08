@@ -4,14 +4,13 @@ import java.util.Scanner;
 import java.io.IOException;
 import database.code.*;
 
-
 public class CheckingDetails
 {
   // global level variables
-  static String sendMoney;
-  static String sendPhoneNum;
-  static String sendAccNum;
-  static String sendIfscCode;
+  public static String sendMoney;
+  public static String sendPhoneNum;
+  public static String sendAccNum;
+  public static String sendIfscCode;
   static Scanner scan = new Scanner(System.in);
 
   public static void CheckSendPhoneNumber() throws IOException
@@ -20,8 +19,8 @@ public class CheckingDetails
   		while (true)
   		{
   			System.out.println("Enter Sending PhoneNumber ");
-  			int sendPhoneNum = scan.nextInt();
-  			if (sendPhoneNum.length()==10)
+  			sendPhoneNum = scan.nextLine();
+  			if (sendPhoneNum.equals("10"))
   			{
   					System.out.println("");
             WriteUserDetailsToDatabase.writeUserSendPhoneNumber();
@@ -40,8 +39,8 @@ public class CheckingDetails
     while (true)
     {
         System.out.println("Enter your AccountNumber");
-        int usrAccNum = scan.nextInt();
-        if (usrAccNum==ReadUserDetailesFromDatabase.UserAccountNumber)
+        String usrAccNum = scan.nextLine();
+        if (usrAccNum.equals(ReadUserDetailsFromDatabase.UserAccountNumber))
         {
           System.out.println("Your Ready For enter IFSC code");
           break;
@@ -75,8 +74,8 @@ public class CheckingDetails
     while (true)
     {
         System.out.println("Enter your IFSC code");
-        int usrIfscCode = scan.nextInt();
-        if (usrIfscCode==ReadUserDetailesFromDatabase.UserIFSCcode)
+        String usrIfscCode = scan.nextLine();
+        if (usrIfscCode.equals(ReadUserDetailsFromDatabase.UserIFSCcode))
         {
           System.out.println("");
           break;
@@ -94,12 +93,14 @@ public class CheckingDetails
 		while (true)
 		{
 			System.out.println("Enter Money to Send");
-			sendMoney = scan.nextFloat();
-			if ((sendMoney<=ReadUserDetailesFromDatabase.UserBalance) && (sendMoney>=0))
+			sendMoney = scan.nextLine();
+      int TypeCastSendMoney = Integer.parseInt(sendMoney);
+      String tempUserBalance =  ReadUserDetailsFromDatabase.UserBalance;
+      int TypeCastUserBalance = Integer.parseInt(tempUserBalance);
+			if ((TypeCastSendMoney <= TypeCastUserBalance) && (TypeCastSendMoney >= 0))
 			{
 				System.out.println("");
         WriteUserDetailsToDatabase.writeUserSendMoney();
-        return sendMoney;
 				break;
 			}
 			else
@@ -107,6 +108,7 @@ public class CheckingDetails
 				System.out.println("Enter Less than Your Balance Amount");
 			}
 		}
+    return sendMoney;
   }
 
   public static void CheckMPINpin() throws IOException
@@ -115,8 +117,8 @@ public class CheckingDetails
     while (true)
     {
         System.out.println("Enter your MPIN pin");
-        int usrMpinPin = scan.nextInt();
-        if (usrMpinPin==ReadUserDetailesFromDatabase.usrMPINpin)
+        String usrMpinPin = scan.nextLine();
+        if (usrMpinPin.equals(ReadUserDetailsFromDatabase.UserSetMPINpin))
         {
           System.out.println("Succesfully Transfered");
           viewUsrBankReletedDetailes.viewLastTransactionInPassbook();

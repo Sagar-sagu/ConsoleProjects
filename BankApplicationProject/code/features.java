@@ -32,8 +32,8 @@ public class features
 		while (true)
 		{
 				System.out.println("Enter your MPIN pin ");
-				int userMpinPin = scan.nextInt();
-				if (usrMpinPin==ReadUserDetailesFromDatabase.usrMPINpin)
+				String userMpinPin = scan.nextLine();
+				if (userMpinPin.equals(ReadUserDetailsFromDatabase.UserSetMPINpin))
 				{
 					System.out.println("");
 					System.out.println("Balance :- " + ProvideBankAccount.UserBalance);
@@ -60,27 +60,21 @@ public class features
             System.out.println("3.Back");
             System.out.println("");
             System.out.println("Enter your choice (1,2,3) ");
-            scanChoice = input.nextLine();
-            if ((scanChoice.equals("1")) || (scanChoice.equals("2")))
-            {
-            WriteStudentDetailesToDatabase.writeChoice();
-            }
+            String scanChoice = scan.nextLine();
 
             switch (scanChoice)
             {
-
                 case "1":SendMoneyTruoghPhoneNumber();
-						ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
-                        break;
+													ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
+                        	break;
                 case "2":SendMoneyTruoghAccountNumber();
-						ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
-                        break;
+													ProvideBankAccount.UserBalance = CheckingDetails.CheckSendMoney();
+                        	break;
                 case "3":System.out.println("you are going back.......");
-                        System.out.println("");
-                        break running;
+	                        System.out.println("");
+	                        break running;
                 default:System.out.println("Invalid choice, please try again.");
-                        break;
-
+                        	break;
             }
         }
 	}
